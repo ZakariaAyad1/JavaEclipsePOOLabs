@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">zakaria</span><span class="s2">.</span><span class="s1">gest_personnes</span><span class="s2">.</span><span class="s1">Personne</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">zakaria</span><span class="s2">.</span><span class="s1">gest_personnes</span><span class="s2">.</span><span class="s1">Utilisateur</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">;</span>
+
+<span class="s3">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or</span>
+<span class="s3">// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.</span>
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+
+        <span class="s1">Utilisateur</span><span class="s2">[] </span><span class="s1">utilisateurs </span><span class="s2">= {</span>
+                <span class="s0">new </span><span class="s1">Utilisateur</span><span class="s2">(</span><span class="s4">1</span><span class="s2">, </span><span class="s5">&quot;Zakaria ayad&quot; </span><span class="s2">, </span><span class="s4">7000.00d </span><span class="s2">,</span><span class="s5">&quot;zakaria&quot;</span><span class="s2">, </span><span class="s5">&quot;0000&quot;</span><span class="s2">),</span>
+                <span class="s0">new </span><span class="s1">Utilisateur</span><span class="s2">(</span><span class="s4">2</span><span class="s2">, </span><span class="s5">&quot;kamal titi&quot; </span><span class="s2">, </span><span class="s4">1000.00d </span><span class="s2">,</span><span class="s5">&quot;kamal&quot;</span><span class="s2">, </span><span class="s5">&quot;1111&quot;</span><span class="s2">)</span>
+        <span class="s2">};</span>
+
+
+        <span class="s1">Scanner scanner </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;entrez login : &quot;</span><span class="s2">);</span>
+        <span class="s1">String login </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;entrez password : &quot;</span><span class="s2">);</span>
+        <span class="s1">String password </span><span class="s2">= </span><span class="s1">scanner</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+        <span class="s1">Personne p </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Personne</span><span class="s2">();</span>
+
+        <span class="s0">for</span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s4">0 </span><span class="s2">; </span><span class="s1">i</span><span class="s2">&lt;</span><span class="s1">utilisateurs</span><span class="s2">.</span><span class="s1">length </span><span class="s2">; </span><span class="s1">i</span><span class="s2">++){</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">login</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">utilisateurs</span><span class="s2">[</span><span class="s1">i</span><span class="s2">].</span><span class="s1">getLogin</span><span class="s2">())  &amp;&amp; </span><span class="s1">password</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">utilisateurs</span><span class="s2">[</span><span class="s1">i</span><span class="s2">].</span><span class="s1">getPassword</span><span class="s2">()) ){</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Autentification reussie:)&quot;</span><span class="s2">);</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;votre login : &quot; </span><span class="s2">+ </span><span class="s1">utilisateurs</span><span class="s2">[</span><span class="s1">i</span><span class="s2">].</span><span class="s1">getLogin</span><span class="s2">());</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;votre password : &quot; </span><span class="s2">+ </span><span class="s1">utilisateurs</span><span class="s2">[</span><span class="s1">i</span><span class="s2">].</span><span class="s1">getPassword</span><span class="s2">());</span>
+
+<span class="s3">//                utilisateurs[i].showUtilisateur();</span>
+<span class="s3">//                p.showPersonne();</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">utilisateurs</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+
+            <span class="s2">}</span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;Echec d'authentification (:!&quot; </span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+
+        <span class="s2">}</span>
+
+
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
