@@ -1,0 +1,65 @@
+package ayad.gest_personnes;
+
+public abstract class Personne {
+
+    private int id ;
+    private String nomComplet;
+    private double salaire;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNomComplet() {
+        return nomComplet;
+    }
+
+    public double getSalaire() {
+        return salaire;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNomComplet(String nomComplet) {
+        this.nomComplet = nomComplet;
+    }
+
+    public void setSalaire(double salaire) {
+        this.salaire = salaire;
+    }
+
+
+    public Personne() {
+
+    }
+
+    public Personne(int id, String nomComplet, double salaire) {
+        this.id = id;
+        this.nomComplet = nomComplet;
+        this.salaire = salaire;
+    }
+
+    public Personne(String nomComplet, int id) {
+        this.nomComplet = nomComplet;
+        this.id = id;
+    }
+
+    public Personne(Personne per) {
+        this.salaire =per.salaire;
+        this.nomComplet = per.nomComplet;
+        this.id = per.id;
+    }
+
+    public abstract String showPersonne();
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "id=" + id +
+                ", nomComplet='" + nomComplet + '\'' +
+                ", salaire=" + salaire +
+                '}';
+    }
+}
